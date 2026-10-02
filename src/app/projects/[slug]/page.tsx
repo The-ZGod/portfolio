@@ -16,8 +16,31 @@ export default async function ProjectPage({
 
     if (!project) {
         return (
-            <main className="flex min-h-screen items-center justify-center px-6">
-                <div className="text-center">
+            <main className="min-h-screen">
+
+                {/* Blueprint guides */}
+                <div
+                    aria-hidden="true"
+                    className="pointer-events-none fixed inset-0 z-50 hidden md:block"
+                >
+                    {/* Left vertical guide */}
+                    <div className="absolute inset-y-0 left-[30%] border-l border-dashed border-white/15 dark:border-white/15" />
+
+                    {/* Right vertical guide */}
+                    <div className="absolute inset-y-0 left-[70%] border-l border-dashed border-white/15 dark:border-white/15" />
+
+                    {/* Horizontal guide */}
+                    <div className="absolute left-0 right-0 top-[22vh] border-t border-dashed border-white/15 dark:border-white/15" />
+
+                    {/* Left intersection */}
+                    <div className="absolute left-[30%] top-[22vh] size-2 -translate-x-1/2 -translate-y-1/2 rounded-full border border-white/30 bg-[var(--background)]" />
+
+                    {/* Right intersection */}
+                    <div className="absolute left-[70%] top-[22vh] size-2 -translate-x-1/2 -translate-y-1/2 rounded-full border border-white/30 bg-[var(--background)]" />
+                </div>
+
+                {/* Project content */}
+                <div className="relative z-40 mx-auto w-full md:w-[40vw]">
                     <p className="font-technical text-[10px] uppercase tracking-[0.15em] text-zinc-400">
                         404 / PROJECT NOT FOUND
                     </p>
@@ -44,14 +67,18 @@ export default async function ProjectPage({
                 {/* Project header */}
                 <section className="border-b border-black/10 dark:border-white/10">
                     <div className="flex items-center justify-between px-4 py-5">
+
+                        {/* Back */}
                         <Link
                             href="/#projects"
-                            className="font-technical text-[10px] text-zinc-400 transition-colors hover:text-zinc-900 dark:hover:text-white"
+                            className="flex size-8 items-center justify-center rounded-[5px] border border-black/10 text-sm text-zinc-500 transition-colors hover:bg-zinc-50 dark:border-white/10 dark:hover:bg-zinc-950"
+                            aria-label="Back to projects"
                         >
                             ←
                         </Link>
 
-                        <div className="text-center">
+                        {/* Project identity */}
+                        <div className="flex-1 px-4">
                             <h1 className="text-sm font-semibold tracking-tight">
                                 {project.title}
                             </h1>
@@ -61,36 +88,68 @@ export default async function ProjectPage({
                             </p>
                         </div>
 
+                        {/* Index */}
                         <span className="font-technical text-[9px] text-zinc-400">
                             01
                         </span>
+
                     </div>
                 </section>
 
                 {/* Video */}
                 <section className="border-b border-black/10 p-3 dark:border-white/10">
-                    <div className="aspect-video overflow-hidden rounded-[8px] border border-black/10 bg-zinc-100 dark:border-white/10 dark:bg-zinc-950">
-                        {project.video ? (
-                            <iframe
-                                src={project.video}
-                                title={`${project.title} project demo`}
-                                className="h-full w-full"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                allowFullScreen
-                            />
-                        ) : (
-                            <div className="flex h-full items-center justify-center">
-                                <div className="text-center">
-                                    <p className="font-technical text-[9px] uppercase tracking-[0.15em] text-zinc-400">
-                                        PROJECT DEMO
-                                    </p>
+                    <div className="relative overflow-hidden border border-black/10 bg-zinc-100 dark:border-white/10 dark:bg-zinc-950">
 
-                                    <p className="mt-3 text-sm text-zinc-500">
-                                        Video coming soon
-                                    </p>
+                        {/* Technical label */}
+                        <div className="absolute left-3 top-3 z-10 flex items-center gap-2">
+                            <span className="size-1.5 rounded-full bg-zinc-400" />
+
+                            <span className="font-technical text-[8px] uppercase tracking-[0.15em] text-zinc-400">
+                                PROJECT DEMO
+                            </span>
+                        </div>
+
+                        {/* Index */}
+                        <span className="absolute right-3 top-3 z-10 font-technical text-[8px] text-zinc-400">
+                            01 / 01
+                        </span>
+
+                        {/* Video */}
+                        <div className="aspect-video">
+                            {project.video ? (
+                                <iframe
+                                    src={project.video}
+                                    title={`${project.title} project demo`}
+                                    className="h-full w-full"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                    allowFullScreen
+                                />
+                            ) : (
+                                <div className="flex h-full items-center justify-center">
+                                    <div className="text-center">
+                                        <p className="font-technical text-[9px] uppercase tracking-[0.15em] text-zinc-400">
+                                            PROJECT DEMO
+                                        </p>
+
+                                        <p className="mt-3 text-sm text-zinc-500">
+                                            Video coming soon
+                                        </p>
+                                    </div>
                                 </div>
-                            </div>
-                        )}
+                            )}
+                        </div>
+
+                        {/* Bottom technical line */}
+                        <div className="flex items-center justify-between border-t border-black/10 px-3 py-2 dark:border-white/10">
+                            <span className="font-technical text-[8px] uppercase tracking-[0.12em] text-zinc-400">
+                                {project.category}
+                            </span>
+
+                            <span className="font-technical text-[8px] text-zinc-400">
+                                {project.id}
+                            </span>
+                        </div>
+
                     </div>
                 </section>
 
@@ -182,6 +241,22 @@ export default async function ProjectPage({
                                 {technology}
                             </span>
                         ))}
+                    </div>
+                </section>
+
+                {/* Project footer */}
+                <section className="border-t border-black/10 px-4 py-8 dark:border-white/10">
+                    <div className="flex items-center justify-between">
+                        <Link
+                            href="/#projects"
+                            className="font-technical text-[9px] uppercase tracking-[0.15em] text-zinc-400 transition-colors hover:text-zinc-900 dark:hover:text-white"
+                        >
+                            ← All projects
+                        </Link>
+
+                        <span className="font-technical text-[9px] uppercase tracking-[0.15em] text-zinc-400">
+                            {project.id} / 2026
+                        </span>
                     </div>
                 </section>
 
