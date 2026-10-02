@@ -39,38 +39,152 @@ export default async function ProjectPage({
 
     return (
         <main className="min-h-screen">
-            <div className="mx-auto w-full max-w-4xl px-6 py-16">
-                <Link
-                    href="/#projects"
-                    className="font-technical text-[10px] uppercase tracking-[0.15em] text-zinc-400 transition-colors hover:text-zinc-900 dark:hover:text-white"
-                >
-                    ← Back to projects
-                </Link>
+            <div className="mx-auto w-full md:w-[40vw]">
 
-                <div className="mt-16">
-                    <p className="font-technical text-[10px] uppercase tracking-[0.18em] text-zinc-400">
-                        {project.category}
+                {/* Project header */}
+                <section className="border-b border-black/10 dark:border-white/10">
+                    <div className="flex items-center justify-between px-4 py-5">
+                        <Link
+                            href="/#projects"
+                            className="font-technical text-[10px] text-zinc-400 transition-colors hover:text-zinc-900 dark:hover:text-white"
+                        >
+                            ←
+                        </Link>
+
+                        <div className="text-center">
+                            <h1 className="text-sm font-semibold tracking-tight">
+                                {project.title}
+                            </h1>
+
+                            <p className="mt-1 font-technical text-[8px] uppercase tracking-[0.12em] text-zinc-400">
+                                Projects / {project.title}
+                            </p>
+                        </div>
+
+                        <span className="font-technical text-[9px] text-zinc-400">
+                            01
+                        </span>
+                    </div>
+                </section>
+
+                {/* Video */}
+                <section className="border-b border-black/10 p-3 dark:border-white/10">
+                    <div className="aspect-video overflow-hidden rounded-[8px] border border-black/10 bg-zinc-100 dark:border-white/10 dark:bg-zinc-950">
+                        {project.video ? (
+                            <iframe
+                                src={project.video}
+                                title={`${project.title} project demo`}
+                                className="h-full w-full"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowFullScreen
+                            />
+                        ) : (
+                            <div className="flex h-full items-center justify-center">
+                                <div className="text-center">
+                                    <p className="font-technical text-[9px] uppercase tracking-[0.15em] text-zinc-400">
+                                        PROJECT DEMO
+                                    </p>
+
+                                    <p className="mt-3 text-sm text-zinc-500">
+                                        Video coming soon
+                                    </p>
+                                </div>
+                            </div>
+                        )}
+                    </div>
+                </section>
+
+                {/* Project links */}
+                <section className="grid grid-cols-3 border-b border-black/10 dark:border-white/10">
+                    <a
+                        href={project.github ?? "#"}
+                        target={project.github ? "_blank" : undefined}
+                        rel={project.github ? "noopener noreferrer" : undefined}
+                        className="border-r border-black/10 px-3 py-5 text-center font-technical text-[10px] uppercase tracking-[0.1em] text-zinc-500 transition-colors hover:bg-zinc-50 dark:border-white/10 dark:hover:bg-zinc-950"
+                    >
+                        GitHub ↗
+                    </a>
+
+                    {project.live ? (
+                        <a
+                            href={project.live}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="border-r border-black/10 px-3 py-5 text-center font-technical text-[10px] uppercase tracking-[0.1em] text-zinc-500 transition-colors hover:bg-zinc-50 dark:border-white/10 dark:hover:bg-zinc-950"
+                        >
+                            Website ↗
+                        </a>
+                    ) : (
+                        <span className="cursor-not-allowed border-r border-black/10 px-3 py-5 text-center font-technical text-[10px] uppercase tracking-[0.1em] text-zinc-300 dark:border-white/10 dark:text-zinc-700">
+                            Website
+                        </span>
+                    )}
+
+                    {project.post ? (
+                        <a
+                            href={project.post}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="px-3 py-5 text-center font-technical text-[10px] uppercase tracking-[0.1em] text-zinc-500 transition-colors hover:bg-zinc-50 dark:hover:bg-zinc-950"
+                        >
+                            Post ↗
+                        </a>
+                    ) : (
+                        <span className="cursor-not-allowed px-3 py-5 text-center font-technical text-[10px] uppercase tracking-[0.1em] text-zinc-300 dark:text-zinc-700">
+                            Post
+                        </span>
+                    )}
+                </section>
+
+                {/* Project information */}
+                <section className="border-b border-black/10 px-4 py-10 dark:border-white/10">
+                    <div className="flex items-start justify-between gap-6">
+                        <div>
+                            <h2 className="text-2xl font-bold tracking-[-0.04em]">
+                                {project.title}
+                            </h2>
+
+                            <p className="mt-4 max-w-xl text-sm leading-7 text-zinc-500">
+                                {project.description}
+                            </p>
+                        </div>
+
+                        {project.status && (
+                            <span className="mt-1 flex shrink-0 items-center gap-2 font-technical text-[9px] text-zinc-400">
+                                <span
+                                    className={`size-1.5 rounded-full ${project.status === "LIVE"
+                                            ? "bg-emerald-500"
+                                            : project.status === "IN DEVELOPMENT"
+                                                ? "bg-amber-500"
+                                                : "bg-zinc-400"
+                                        }`}
+                                />
+
+                                {project.status}
+                            </span>
+                        )}
+                    </div>
+                </section>
+
+                {/* Stack */}
+                <section className="px-4 py-10">
+                    <p className="font-technical text-[9px] uppercase tracking-[0.15em] text-zinc-400">
+                        Stack used
                     </p>
 
-                    <h1 className="mt-4 text-5xl font-bold tracking-[-0.05em]">
-                        {project.title}
-                    </h1>
-
-                    <p className="mt-6 max-w-2xl text-sm leading-7 text-zinc-500">
-                        {project.description}
-                    </p>
-
-                    <div className="mt-10 flex flex-wrap gap-2">
+                    <div className="mt-5 flex flex-wrap gap-2">
                         {project.technologies.map((technology) => (
                             <span
                                 key={technology}
-                                className="border border-black/10 px-2 py-1 font-technical text-[9px] text-zinc-500 dark:border-white/10"
+                                className="inline-flex items-center gap-2 rounded-[6px] border border-black/10 bg-zinc-50 px-3 py-2 text-xs font-medium text-zinc-600 transition-colors hover:border-black/20 dark:border-white/10 dark:bg-zinc-950 dark:text-zinc-400 dark:hover:border-white/20"
                             >
+                                <span className="size-1.5 rounded-full bg-zinc-400 dark:bg-zinc-600" />
                                 {technology}
                             </span>
                         ))}
                     </div>
-                </div>
+                </section>
+
             </div>
         </main>
     );

@@ -6,6 +6,9 @@ export type Project = {
     technologies: string[];
     github?: string;
     live?: string;
+    video?: string;
+    post?: string;
+    status?: "LIVE" | "IN DEVELOPMENT" | "ARCHIVED";
 };
 
 export const projects: Project[] = [
@@ -15,14 +18,10 @@ export const projects: Project[] = [
         category: "DEVELOPER PLATFORM",
         description:
             "A feature flag and experimentation platform for controlling feature rollouts, targeting users, and measuring percentage-based releases.",
-        technologies: [
-            "Next.js",
-            "TypeScript",
-            "Node.js",
-            "PostgreSQL",
-            "Prisma",
-        ],
+        technologies: ["Next.js", "TypeScript", "Node.js", "PostgreSQL", "Prisma"],
         github: "https://github.com/The-ZGod/FlagForge",
+        video: "",
+        status: "IN DEVELOPMENT",
     },
 
     {
