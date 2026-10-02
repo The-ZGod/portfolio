@@ -44,7 +44,7 @@ export default function Home() {
       {/* Main Content */}
       <div className="relative z-40  mx-auto w-full md:w-[40vw]">
         {/* Banner */}
-        <section className="flex h-[22vh] items-end border-b border-black/10 px-4 pb-5 dark:border-white/10">
+        <section className="blueprint-reveal flex h-[22vh] items-end border-b border-black/10 px-4 pb-5 dark:border-white/10">
           <div>
             <p className="font-technical text-[10px] font-semibold uppercase tracking-[0.2em] text-zinc-500">
               Portfolio / 2026
@@ -57,7 +57,7 @@ export default function Home() {
         </section>
 
         {/* Profile */}
-        <section className="flex h-28 items-center justify-between border-b border-black/10 px-4 dark:border-white/10">
+        <section className="blueprint-reveal flex h-28 items-center justify-between border-b border-black/10 px-4 dark:border-white/10">
           {/* Identity */}
           <div className="flex items-center gap-3">
             {/* Avatar */}
@@ -111,7 +111,7 @@ export default function Home() {
         {/* Hero */}
         <section
           id="about"
-          className="min-h-[calc(100vh-22vh-112px)] border-b border-black/10 px-4 py-20 dark:border-white/10"
+          className="blueprint-reveal min-h-[calc(100vh-22vh-112px)] border-b border-black/10 px-4 py-20 dark:border-white/10"
         >
           {/* Section label */}
           <p className="font-technical text-[10px] font-medium uppercase tracking-[0.18em] text-zinc-500">
@@ -186,7 +186,7 @@ export default function Home() {
 
         <section
           id="projects"
-          className="border-b border-black/10 px-4 py-24 dark:border-white/10"
+          className="blueprint-reveal border-b border-black/10 px-4 py-24 dark:border-white/10"
         >
           <p className="font-technical text-[10px] font-medium uppercase tracking-[0.18em] text-zinc-500">
             02 / PROJECTS
@@ -212,7 +212,7 @@ export default function Home() {
 
         <section
           id="experience"
-          className="border-b border-black/10 px-4 py-24 dark:border-white/10"
+          className="blueprint-reveal border-b border-black/10 px-4 py-24 dark:border-white/10"
         >
           <p className="font-technical text-[10px] font-medium uppercase tracking-[0.18em] text-zinc-500">
             03 / BACKGROUND
@@ -238,7 +238,7 @@ export default function Home() {
 
         <section
           id="skills"
-          className="border-b border-black/10 px-4 py-24 dark:border-white/10"
+          className="blueprint-reveal border-b border-black/10 px-4 py-24 dark:border-white/10"
         >
           <p className="font-technical text-[10px] font-medium uppercase tracking-[0.18em] text-zinc-500">
             04 / SKILLS
@@ -264,7 +264,7 @@ export default function Home() {
 
         <section
           id="coding"
-          className="border-b border-black/10 px-4 py-24 dark:border-white/10"
+          className="blueprint-reveal border-b border-black/10 px-4 py-24 dark:border-white/10"
         >
           <p className="font-technical text-[10px] font-medium uppercase tracking-[0.18em] text-zinc-500">
             05 / PROBLEM SOLVING
@@ -290,7 +290,7 @@ export default function Home() {
 
         <section
           id="contact"
-          className="px-4 py-24"
+          className="blueprint-reveal px-4 py-24"
         >
           <p className="font-technical text-[10px] font-medium uppercase tracking-[0.18em] text-zinc-500">
             06 / CONTACT

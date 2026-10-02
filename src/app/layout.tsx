@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import ThemeProvider from "@/components/ThemeProvider";
+import SmoothScroll from "@/components/SmoothScroll"; 
 import "./globals.css";
 
 const geist = Geist({
@@ -30,6 +31,7 @@ export default function RootLayout({
         className={`${geist.variable} ${geistMono.variable} antialiased`}
       >
         <ThemeProvider>
+          <SmoothScroll />
           {children}
         </ThemeProvider>
       </body>
