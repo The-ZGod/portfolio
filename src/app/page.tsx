@@ -96,12 +96,14 @@ export default function Home() {
               GitHub
             </a>
 
-            <button
-              type="button"
+            <a
+              href="/resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
               className="rounded-[5px] border border-black/10 px-2.5 py-1.5 font-technical text-[10px] transition-colors hover:bg-zinc-100 dark:border-white/10 dark:hover:bg-zinc-900"
             >
-              Resume
-            </button>
+              Resume ↗
+            </a>
           </div>
         </section>
 
