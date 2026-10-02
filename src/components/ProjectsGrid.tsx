@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { projects } from "@/data/projects";
 
 export default function ProjectsGrid() {
@@ -54,12 +55,12 @@ export default function ProjectsGrid() {
                             </a>
                         )}
 
-                        <button
-                            type="button"
-                            className="font-technical text-[9px] uppercase tracking-[0.1em] text-zinc-500 transition-colors hover:text-[var(--foreground)]"
+                        <Link
+                            href={`/projects/${project.id}`}
+                            className="font-technical text-[9px] uppercase tracking-[0.12em] text-zinc-400 transition-colors hover:text-zinc-900 dark:hover:text-white"
                         >
                             Case Study →
-                        </button>
+                        </Link>
                     </div>
                 </article>
             ))}
