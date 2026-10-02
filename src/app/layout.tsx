@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import ThemeProvider from "@/components/ThemeProvider";
 import SmoothScroll from "@/components/SmoothScroll"; 
+import ScrollProgress from "@/components/ScrollProgress";
 import "./globals.css";
 
 const geist = Geist({
@@ -32,6 +33,7 @@ export default function RootLayout({
       >
         <ThemeProvider>
           <SmoothScroll />
+          <ScrollProgress />
           {children}
         </ThemeProvider>
       </body>
