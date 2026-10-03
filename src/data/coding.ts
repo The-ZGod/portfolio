@@ -6,7 +6,7 @@ export type CodingStat = {
 
 export const codingStats: CodingStat[] = [
     {
-        value: "600+",
+        value: "700+",
         label: "PROBLEMS",
         detail: "DSA problems solved",
     },
@@ -21,7 +21,7 @@ export const codingStats: CodingStat[] = [
         detail: "Maximum rating",
     },
     {
-        value: "2★",
+        value: "★★",
         label: "CODECHEF",
         detail: "Competitive programming",
     },

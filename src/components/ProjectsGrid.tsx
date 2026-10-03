@@ -1,6 +1,35 @@
 import Link from "next/link";
 import { projects } from "@/data/projects";
 
+import {
+    SiNextdotjs,
+    SiTypescript,
+    SiReact,
+    SiNodedotjs,
+    SiPostgresql,
+    SiPrisma,
+    SiMysql,
+    SiJavascript,
+    SiFlask,
+    SiPython,
+    SiC,
+} from "react-icons/si";
+
+const technologyIcons: Record<string, React.ElementType> = {
+    "Next.js": SiNextdotjs,
+    TypeScript: SiTypescript,
+    React: SiReact,
+    "Node.js": SiNodedotjs,
+    PostgreSQL: SiPostgresql,
+    Prisma: SiPrisma,
+    MySQL: SiMysql,
+    JavaScript: SiJavascript,
+    // Java: SiJava,
+    Flask: SiFlask,
+    Python: SiPython,
+    C: SiC,
+};
+
 export default function ProjectsGrid() {
     return (
         <div className="mt-8 grid grid-cols-1 gap-y-8 gap-x-5 px-5 sm:grid-cols-2">
@@ -64,20 +93,27 @@ export default function ProjectsGrid() {
                             )}
                         </div>
 
-                        <p className="mt-2 max-w-md text-[13px] leading-6 text-zinc-500">
+                        <p className="mt-2 max-w-md text-[14px] leading-6 text-zinc-400">
                             {project.description}
                         </p>
 
                         <div className="mt-4 flex items-center justify-between gap-4">
-                            <div className="flex min-w-0 flex-wrap gap-x-3 gap-y-1">
-                                {project.technologies.slice(0, 5).map((technology) => (
-                                    <span
-                                        key={technology}
-                                        className="font-technical text-[8px] text-zinc-500"
-                                    >
-                                        {technology}
-                                    </span>
-                                ))}
+                            <div className="mt-4 flex items-center gap-3">
+                                {project.technologies.map((technology) => {
+                                    const Icon = technologyIcons[technology];
+
+                                    if (!Icon) return null;
+
+                                    return (
+                                        <span
+                                            key={technology}
+                                            title={technology}
+                                            className="text-zinc-500 transition-colors hover:text-zinc-900 dark:text-zinc-500 dark:hover:text-zinc-200"
+                                        >
+                                            <Icon size={16} />
+                                        </span>
+                                    );
+                                })}
                             </div>
 
                             <Link

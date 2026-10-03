@@ -7,6 +7,8 @@ import CodingStats from "@/components/CodingStats";
 import Footer from "@/components/Footer";
 import ThemeToggle from "@/components/ThemeToggle";
 import MobileNavbar from "@/components/MobileNavbar";
+import LeetCodeActivity from "@/components/LeetCodeActivity";
+import CodingProfiles from "@/components/CodingProfiles";
 
 export default function Home() {
   return (
@@ -102,13 +104,13 @@ export default function Home() {
           id="about"
           className="blueprint-section px-4"
         >
-          <div className="mt-6">
-            <p className="text-[15px] leading-7 text-zinc-300 dark:text-zinc-300">
+          <div className="mt-4">
+            <p className="text-[15px] leading-5 text-zinc-300 dark:text-zinc-300">
               Software Engineer / Full-Stack Developer. I love building,
               learning, and shipping things.
             </p>
 
-            <ul className="mt-5 space-y-2 text-[14px] leading-6 text-zinc-500">
+            <ul className="mt-5 space-y-2 text-[14px] leading-4 text-zinc-300 dark:text-zinc-300">
               <li className="flex gap-2">
                 <span>•</span>
                 <span>
@@ -201,37 +203,6 @@ export default function Home() {
         </section>
 
         <section
-          id="experience"
-          className="blueprint-section px-4 py-4"
-        >
-          <div className="blueprint-heading">
-            <h2 className="text-xl font-semibold tracking-tight">
-              Education
-            </h2>
-          </div>
-
-          <ExperienceTimeline />
-        </section>
-
-        <section
-          id="skills"
-          className="blueprint-section blueprint-reveal px-4 py-4"
-        >
-          <div className="blueprint-heading">
-            <h2 className="text-xl font-semibold tracking-tight">
-              Skills
-            </h2>
-          </div>
-
-          <p className="mt-4 max-w-xl text-sm leading-7 text-zinc-500">
-            Technologies and computer science fundamentals I use to design,
-            build, and understand software systems.
-          </p>
-
-          <SkillsGrid />
-        </section>
-
-        <section
           id="coding"
           className="blueprint-section blueprint-reveal px-4 py-4"
         >
@@ -251,7 +222,36 @@ export default function Home() {
             competitive programming platforms.
           </p>
 
+          <CodingProfiles />
+
           <CodingStats />
+          <LeetCodeActivity />
+        </section>
+
+        <section
+          id="experience"
+          className="blueprint-section px-4 py-4"
+        >
+          <div className="blueprint-heading">
+            <h2 className="text-xl font-semibold tracking-tight">
+              Education
+            </h2>
+          </div>
+
+          <ExperienceTimeline />
+        </section>
+
+        <section
+          id="skills"
+          className="blueprint-section blueprint-reveal px-4 py-4"
+        >
+          <div className="blueprint-heading">
+            <h2 className="text-xl font-semibold tracking-tight">
+              Skills &amp; Technologies
+            </h2>
+          </div>
+
+          <SkillsGrid />
         </section>
 
         <section
