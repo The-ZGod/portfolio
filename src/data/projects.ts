@@ -7,8 +7,14 @@ export type Project = {
     github?: string;
     live?: string;
     video?: string;
+    preview?: string;
     post?: string;
     status?: "LIVE" | "IN DEVELOPMENT" | "ARCHIVED";
+    details?: {
+        problem: string;
+        solution: string;
+        highlights: string[];
+    };
 };
 
 export const projects: Project[] = [
@@ -22,6 +28,19 @@ export const projects: Project[] = [
         github: "https://github.com/The-ZGod/FlagForge",
         video: "",
         status: "IN DEVELOPMENT",
+        details: {
+            problem:
+                "Teams need a safe way to release features gradually without redeploying their applications.",
+            solution:
+                "FlagForge provides feature flags, percentage-based rollouts, user targeting, and deterministic evaluation for controlled feature releases.",
+            highlights: [
+                "Deterministic SHA-256 based rollout bucketing",
+                "Percentage-based feature rollouts",
+                "REST API for flag evaluation",
+                "PostgreSQL persistence with Prisma",
+                "Automated backend tests and evaluation benchmarks",
+            ],
+        },
     },
 
     {

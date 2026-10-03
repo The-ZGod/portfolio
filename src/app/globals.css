@@ -31,7 +31,7 @@ body {
   font-family: var(--font-geist-mono), monospace;
 }
 
-/* page reveal transition  */
+/* Page reveal transition */
 @keyframes blueprint-reveal {
   from {
     opacity: 0;
@@ -51,5 +51,69 @@ body {
 @media (prefers-reduced-motion: reduce) {
   .blueprint-reveal {
     animation: none;
+  }
+}
+
+/* Page loader */
+@keyframes loader {
+  from {
+    transform: scaleX(0);
+  }
+
+  to {
+    transform: scaleX(1);
+  }
+}
+
+/* Blueprint sections */
+.blueprint-section {
+  position: relative;
+}
+
+/* Section heading with full-width blueprint lines */
+@media (min-width: 768px) {
+  .blueprint-heading {
+    position: relative;
+    padding: 10px 0;
+  }
+
+  .blueprint-heading::before,
+  .blueprint-heading::after {
+    content: "";
+    position: absolute;
+    left: -30vw;
+    width: 100vw;
+    border-top: 1px dashed rgba(0, 0, 0, 0.1);
+    pointer-events: none;
+  }
+
+  /* Top line */
+  .blueprint-heading::before {
+    top: 0;
+  }
+
+  /* Bottom line */
+  .blueprint-heading::after {
+    bottom: 0;
+  }
+
+  /* Dark mode */
+  .dark .blueprint-heading::before,
+  .dark .blueprint-heading::after {
+    border-color: rgba(255, 255, 255, 0.1);
+  }
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+  .blueprint-heading {
+    position: relative;
+    padding: 14px 0;
+    border-top: 1px dashed rgba(0, 0, 0, 0.1);
+    border-bottom: 1px dashed rgba(0, 0, 0, 0.1);
+  }
+
+  .dark .blueprint-heading {
+    border-color: rgba(255, 255, 255, 0.1);
   }
 }

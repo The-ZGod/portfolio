@@ -6,11 +6,14 @@ import ExperienceTimeline from "@/components/ExperienceTimeline";
 import CodingStats from "@/components/CodingStats";
 import Footer from "@/components/Footer";
 import ThemeToggle from "@/components/ThemeToggle";
+import MobileNavbar from "@/components/MobileNavbar";
 
 export default function Home() {
   return (
     <main className="min-h-screen">
       <RightNavbar />
+      <MobileNavbar />
+
       {/* Blueprint guides */}
       <div
         aria-hidden="true"
@@ -21,35 +24,16 @@ export default function Home() {
 
         {/* Right vertical guide */}
         <div className="absolute inset-y-0 left-[70%] border-l border-dashed border-black/10 dark:border-white/10" />
-
-        {/* Upper horizontal guide */}
-        <div className="absolute left-0 right-0 top-[22vh] border-t border-dashed border-black/10 dark:border-white/10" />
-
-        {/* Header-aligned horizontal guide */}
-        <div className="absolute left-0 right-0 top-[calc(22vh+112px)] border-t border-dashed border-black/10 dark:border-white/10" />
-
-        {/* Left intersection */}
-        <div className="absolute left-[30%] top-[22vh] size-2 -translate-x-1/2 -translate-y-1/2 rounded-full border border-black/30 bg-[var(--background)] dark:border-white/30" />
-
-        {/* Right intersection */}
-        <div className="absolute left-[70%] top-[22vh] size-2 -translate-x-1/2 -translate-y-1/2 rounded-full border border-black/30 bg-[var(--background)] dark:border-white/30" />
-
-        {/* Header left intersection */}
-        <div className="absolute left-[30%] top-[calc(22vh+112px)] size-1.5 -translate-x-1/2 -translate-y-1/2 bg-black/30 dark:bg-white/30" />
-
-        {/* Header right intersection */}
-        <div className="absolute left-[70%] top-[calc(22vh+112px)] size-1.5 -translate-x-1/2 -translate-y-1/2 bg-black/30 dark:bg-white/30" />
       </div>
 
       {/* Main Content */}
-      <div className="relative z-40  mx-auto w-full md:w-[40vw]">
+      <div className="relative z-40 mx-auto w-full md:w-[40vw]">
         {/* Banner */}
-        <section className="blueprint-reveal flex h-[22vh] items-end border-b border-black/10 px-4 pb-5 dark:border-white/10">
+        <section className="blueprint-reveal relative flex h-[22vh] items-end px-4 pb-5">
           <div>
             <p className="font-technical text-[10px] font-semibold uppercase tracking-[0.2em] text-zinc-500">
               Portfolio / 2026
             </p>
-
             <h1 className="mt-2 text-2xl font-bold tracking-[-0.03em]">
               Arihant Alagoudar
             </h1>
@@ -57,201 +41,186 @@ export default function Home() {
         </section>
 
         {/* Profile */}
-        <section className="blueprint-reveal flex h-28 items-center justify-between border-b border-black/10 px-4 dark:border-white/10">
-          {/* Identity */}
-          <div className="flex items-center gap-3">
-            {/* Avatar */}
-            <div className="flex size-14 items-center justify-center rounded-[6px] border border-black/20 bg-zinc-100 dark:border-white/15 dark:bg-zinc-900">
-              <span className="font-technical text-sm font-medium">
-                AA
-              </span>
+        <section className="relative w-full border-y border-dashed border-black/10 dark:border-white/10 md:-ml-[30vw] md:w-screen">
+          <span
+            aria-hidden="true"
+            className="absolute left-[30%] top-0 size-2 -translate-x-1/2 -translate-y-1/2 rounded-full border border-black/30 bg-[var(--background)] dark:border-white/30"
+          />
+          <span
+            aria-hidden="true"
+            className="absolute left-[70%] top-0 size-2 -translate-x-1/2 -translate-y-1/2 rounded-full border border-black/30 bg-[var(--background)] dark:border-white/30"
+          />
+          <span
+            aria-hidden="true"
+            className="absolute bottom-0 left-[30%] size-1.5 -translate-x-1/2 translate-y-1/2 bg-black/30 dark:bg-white/30"
+          />
+          <span
+            aria-hidden="true"
+            className="absolute bottom-0 left-[70%] size-1.5 -translate-x-1/2 translate-y-1/2 bg-black/30 dark:bg-white/30"
+          />
+
+          <div className="mx-auto w-full md:w-[40vw]">
+            <div className="px-4 py-5">
+              <div className="flex items-center justify-between gap-4">
+                <div className="flex min-w-0 items-center gap-4">
+                  <div className="size-[72px] shrink-0 overflow-hidden rounded-[7px] border border-black/10 bg-zinc-100 dark:border-white/10 dark:bg-zinc-900">
+                    <img
+                      src="/profile.jpg"
+                      alt="Arihant Alagoudar"
+                      className="h-full w-full object-cover grayscale transition-all duration-500 ease-out hover:scale-105 hover:grayscale-0"
+                    />
+                  </div>
+
+                  <div className="min-w-0">
+                    <h1 className="truncate text-[22px] font-semibold tracking-tight">
+                      Arihant Alagoudar
+                    </h1>
+                    <p className="mt-1 text-sm text-zinc-500">
+                      Software Engineer · Full-Stack · AI/ML
+                    </p>
+                    <p className="mt-1 font-technical text-[8px] uppercase tracking-[0.12em] text-zinc-400">
+                      ISE · RNSIT · Bengaluru
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex shrink-0 items-center gap-2">
+                  <span className="font-technical text-[8px] text-zinc-400">
+                    ⌘ K
+                  </span>
+                  <ThemeToggle />
+                </div>
+              </div>
             </div>
-
-            {/* Details */}
-            <div>
-              <p className="text-sm font-semibold tracking-tight">
-                Arihant Alagoudar
-              </p>
-
-              <p className="mt-1 text-xs text-zinc-500">
-                Full-Stack Developer · AI/ML
-              </p>
-
-              <p className="mt-1 font-technical text-[9px] uppercase tracking-[0.12em] text-zinc-400">
-                ISE · RNSIT · Bengaluru
-              </p>
-            </div>
-          </div>
-
-          {/* Actions */}
-          <div className="flex items-center gap-2">
-            <ThemeToggle />
-
-            <a
-              href="https://github.com/The-ZGod"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="rounded-[5px] border border-black/10 px-2.5 py-1.5 font-technical text-[10px] transition-colors hover:bg-zinc-100 dark:border-white/10 dark:hover:bg-zinc-900"
-            >
-              GitHub
-            </a>
-
-            <a
-              href="/resume.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="rounded-[5px] border border-black/10 px-2.5 py-1.5 font-technical text-[10px] transition-colors hover:bg-zinc-100 dark:border-white/10 dark:hover:bg-zinc-900"
-            >
-              Resume ↗
-            </a>
           </div>
         </section>
 
         {/* Temporary content */}
+
         {/* Hero */}
         <section
           id="about"
-          className="blueprint-reveal min-h-[calc(100vh-22vh-112px)] border-b border-black/10 px-4 py-20 dark:border-white/10"
+          className="blueprint-section px-4"
         >
-          {/* Section label */}
-          <p className="font-technical text-[10px] font-medium uppercase tracking-[0.18em] text-zinc-500">
-            01 / INTRODUCTION
-          </p>
+          <div className="mt-6">
+            <p className="text-[15px] leading-7 text-zinc-300 dark:text-zinc-300">
+              Software Engineer / Full-Stack Developer. I love building,
+              learning, and shipping things.
+            </p>
 
-          {/* Main statement */}
-          <h2 className="mt-6 max-w-[680px] text-5xl font-bold leading-[0.98] tracking-[-0.055em] sm:text-6xl">
-            I build software
-            <br />
-            that solves
-            <br />
-            real problems.
-          </h2>
+            <ul className="mt-5 space-y-2 text-[14px] leading-6 text-zinc-500">
+              <li className="flex gap-2">
+                <span>•</span>
+                <span>
+                  Software engineering, AI/ML, and developer tools excite me.
+                </span>
+              </li>
+              <li className="flex gap-2">
+                <span>•</span>
+                <span>
+                  I enjoy turning ideas into practical products and solving real
+                  problems.
+                </span>
+              </li>
+              <li className="flex gap-2">
+                <span>•</span>
+                <span>
+                  Currently building projects with React, Next.js, Node.js, and
+                  TypeScript.
+                </span>
+              </li>
+            </ul>
 
-          {/* Description */}
-          <p className="mt-8 max-w-[580px] text-sm leading-7 text-zinc-500 sm:text-[15px]">
-            I&apos;m Arihant, a final-year Information Science and Engineering
-            student focused on software engineering, full-stack development,
-            and AI/ML.
-          </p>
+            <div className="mt-6 flex flex-wrap gap-2">
+              <a
+                href="/resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="border border-black/10 bg-zinc-100 px-3 py-2 text-xs text-zinc-700 transition-colors hover:bg-zinc-200 dark:border-white/10 dark:bg-zinc-900 dark:text-zinc-300 dark:hover:bg-zinc-800"
+              >
+                View Resume ↗
+              </a>
 
-          <p className="mt-4 max-w-[580px] text-sm leading-7 text-zinc-500 sm:text-[15px]">
-            I enjoy turning ideas into reliable products — from backend systems
-            and APIs to interactive web applications and intelligent software.
-          </p>
-
-          {/* Technical metadata */}
-          <div className="mt-12 grid grid-cols-2 gap-px border border-black/10 bg-black/10 dark:border-white/10 dark:bg-white/10">
-            <div className="bg-[var(--background)] p-4">
-              <p className="font-technical text-[9px] uppercase tracking-[0.15em] text-zinc-400">
-                Focus
-              </p>
-
-              <p className="mt-2 text-xs font-medium">
-                Software Engineering
-              </p>
+              <a
+                href="mailto:arihant.og@gmail.com"
+                className="border border-black/10 px-3 py-2 text-xs text-zinc-500 transition-colors hover:text-zinc-900 dark:border-white/10 dark:hover:text-white"
+              >
+                Send an email ↗
+              </a>
             </div>
 
-            <div className="bg-[var(--background)] p-4">
-              <p className="font-technical text-[9px] uppercase tracking-[0.15em] text-zinc-400">
-                Currently
-              </p>
+            <p className="mt-7 text-sm text-zinc-500">
+              Here are my{" "}
+              <span className="text-zinc-300 dark:text-zinc-300">socials</span>
+            </p>
 
-              <p className="mt-2 text-xs font-medium">
-                Building &amp; Learning
-              </p>
-            </div>
+            <div className="mt-3 flex flex-wrap gap-2">
+              <a
+                href="https://github.com/The-ZGod"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="border border-black/10 px-3 py-2 font-technical text-[9px] text-zinc-500 transition-colors hover:text-zinc-900 dark:border-white/10 dark:hover:text-white"
+              >
+                GitHub ↗
+              </a>
 
-            <div className="bg-[var(--background)] p-4">
-              <p className="font-technical text-[9px] uppercase tracking-[0.15em] text-zinc-400">
-                Stack
-              </p>
+              <a
+                href="https://www.linkedin.com/in/zgod/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="border border-black/10 px-3 py-2 font-technical text-[9px] text-zinc-500 transition-colors hover:text-zinc-900 dark:border-white/10 dark:hover:text-white"
+              >
+                LinkedIn ↗
+              </a>
 
-              <p className="mt-2 text-xs font-medium">
-                TypeScript · React · Node.js
-              </p>
-            </div>
-
-            <div className="bg-[var(--background)] p-4">
-              <p className="font-technical text-[9px] uppercase tracking-[0.15em] text-zinc-400">
-                Interests
-              </p>
-
-              <p className="mt-2 text-xs font-medium">
-                Systems · AI/ML · Products
-              </p>
+              <a
+                href="mailto:arihant.og@gmail.com"
+                className="border border-black/10 px-3 py-2 font-technical text-[9px] text-zinc-500 transition-colors hover:text-zinc-900 dark:border-white/10 dark:hover:text-white"
+              >
+                Email ↗
+              </a>
             </div>
           </div>
         </section>
 
-
         <section
           id="projects"
-          className="blueprint-reveal border-b border-black/10 px-4 py-24 dark:border-white/10"
+          className="blueprint-section px-4 py-4"
         >
-          <p className="font-technical text-[10px] font-medium uppercase tracking-[0.18em] text-zinc-500">
-            02 / PROJECTS
-          </p>
-
-          <div className="mt-4 flex items-end justify-between gap-4">
-            <h2 className="text-3xl font-bold tracking-[-0.04em]">
-              Selected work
-            </h2>
-
-            <span className="font-technical text-[9px] text-zinc-400">
-              {String(projects.length).padStart(2, "0")} PROJECTS
-            </span>
+          <div className="blueprint-heading">
+            <div className="flex items-end justify-between">
+              <div>
+                <h2 className="text-xl font-semibold tracking-tight">
+                  Projects
+                </h2>
+              </div>
+            </div>
           </div>
-
-          <p className="mt-4 max-w-xl text-sm leading-7 text-zinc-500">
-            A selection of systems and applications I&apos;ve built while exploring
-            full-stack development, software engineering, and AI/ML.
-          </p>
 
           <ProjectsGrid />
         </section>
 
         <section
           id="experience"
-          className="blueprint-reveal border-b border-black/10 px-4 py-24 dark:border-white/10"
+          className="blueprint-section px-4 py-4"
         >
-          <p className="font-technical text-[10px] font-medium uppercase tracking-[0.18em] text-zinc-500">
-            03 / BACKGROUND
-          </p>
-
-          <div className="mt-4 flex items-end justify-between gap-4">
-            <h2 className="text-3xl font-bold tracking-[-0.04em]">
-              Education & experience
+          <div className="blueprint-heading">
+            <h2 className="text-xl font-semibold tracking-tight">
+              Education
             </h2>
-
-            <span className="font-technical text-[9px] text-zinc-400">
-              TIMELINE
-            </span>
           </div>
-
-          <p className="mt-4 max-w-xl text-sm leading-7 text-zinc-500">
-            My academic journey and the engineering work that has shaped how I
-            approach software.
-          </p>
 
           <ExperienceTimeline />
         </section>
 
         <section
           id="skills"
-          className="blueprint-reveal border-b border-black/10 px-4 py-24 dark:border-white/10"
+          className="blueprint-section blueprint-reveal px-4 py-4"
         >
-          <p className="font-technical text-[10px] font-medium uppercase tracking-[0.18em] text-zinc-500">
-            04 / SKILLS
-          </p>
-
-          <div className="mt-4 flex items-end justify-between gap-4">
-            <h2 className="text-3xl font-bold tracking-[-0.04em]">
-              Technical toolkit
+          <div className="blueprint-heading">
+            <h2 className="text-xl font-semibold tracking-tight">
+              Skills
             </h2>
-
-            <span className="font-technical text-[9px] text-zinc-400">
-              06 CATEGORIES
-            </span>
           </div>
 
           <p className="mt-4 max-w-xl text-sm leading-7 text-zinc-500">
@@ -264,20 +233,17 @@ export default function Home() {
 
         <section
           id="coding"
-          className="blueprint-reveal border-b border-black/10 px-4 py-24 dark:border-white/10"
+          className="blueprint-section blueprint-reveal px-4 py-4"
         >
-          <p className="font-technical text-[10px] font-medium uppercase tracking-[0.18em] text-zinc-500">
-            05 / PROBLEM SOLVING
-          </p>
-
-          <div className="mt-4 flex items-end justify-between gap-4">
-            <h2 className="text-3xl font-bold tracking-[-0.04em]">
+          <div className="blueprint-heading">
+            {/* <div className="mt-4 flex items-end justify-between gap-4"> */}
+            <h2 className="text-xl font-semibold tracking-tight">
               Competitive programming
             </h2>
-
-            <span className="font-technical text-[9px] text-zinc-400">
+            {/* <span className="font-technical text-[9px] text-zinc-400">
               DSA / CP
-            </span>
+            </span> */}
+            {/* </div> */}
           </div>
 
           <p className="mt-4 max-w-xl text-sm leading-7 text-zinc-500">
@@ -290,19 +256,18 @@ export default function Home() {
 
         <section
           id="contact"
-          className="blueprint-reveal px-4 py-24"
+          className="blueprint-section blueprint-reveal px-4 py-4"
         >
-          <p className="font-technical text-[10px] font-medium uppercase tracking-[0.18em] text-zinc-500">
-            06 / CONTACT
-          </p>
-
-          <h2 className="mt-4 text-4xl font-bold tracking-[-0.05em]">
-            Let&apos;s build something.
-          </h2>
+          <div className="blueprint-heading">
+            <h2 className="text-xl font-semibold tracking-tight">
+              Let&apos;s build something.
+            </h2>
+          </div>
 
           <p className="mt-5 max-w-xl text-sm leading-7 text-zinc-500">
-            I&apos;m interested in software engineering opportunities, interesting
-            technical problems, and projects where I can build and learn.
+            I&apos;m interested in software engineering opportunities,
+            interesting technical problems, and projects where I can build and
+            learn.
           </p>
 
           {/* Contact panel */}
@@ -329,7 +294,6 @@ export default function Home() {
                   <p className="font-technical text-[9px] uppercase tracking-[0.15em] text-zinc-400">
                     EMAIL
                   </p>
-
                   <p className="mt-2 text-sm font-medium">
                     arihant.og@gmail.com
                   </p>
@@ -350,7 +314,6 @@ export default function Home() {
                   <p className="font-technical text-[9px] uppercase tracking-[0.15em] text-zinc-400">
                     GITHUB
                   </p>
-
                   <p className="mt-2 text-sm font-medium">
                     github.com/The-ZGod
                   </p>
@@ -371,7 +334,6 @@ export default function Home() {
                   <p className="font-technical text-[9px] uppercase tracking-[0.15em] text-zinc-400">
                     LINKEDIN
                   </p>
-
                   <p className="mt-2 text-sm font-medium">
                     LinkedIn profile
                   </p>

@@ -3,6 +3,8 @@ import { Geist, Geist_Mono } from "next/font/google";
 import ThemeProvider from "@/components/ThemeProvider";
 import SmoothScroll from "@/components/SmoothScroll"; 
 import ScrollProgress from "@/components/ScrollProgress";
+import PageLoader from "@/components/PageLoader";
+import CommandPalette from "@/components/CommandPalette";
 import "./globals.css";
 
 const geist = Geist({
@@ -31,6 +33,9 @@ export default function RootLayout({
       <body
         className={`${geist.variable} ${geistMono.variable} antialiased`}
       >
+        <PageLoader />
+        <CommandPalette />
+
         <ThemeProvider>
           <SmoothScroll />
           <ScrollProgress />

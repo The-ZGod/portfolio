@@ -244,6 +244,54 @@ export default async function ProjectPage({
                     </div>
                 </section>
 
+                {project.details && (
+                    <section className="border-t border-black/10 px-4 py-10 dark:border-white/10">
+                        <p className="font-technical text-[9px] uppercase tracking-[0.15em] text-zinc-400">
+                            PROJECT DETAILS
+                        </p>
+
+                        <div className="mt-8 space-y-8">
+                            <div>
+                                <p className="font-technical text-[9px] uppercase tracking-[0.12em] text-zinc-400">
+                                    01 / PROBLEM
+                                </p>
+
+                                <p className="mt-3 text-sm leading-6 text-zinc-500">
+                                    {project.details.problem}
+                                </p>
+                            </div>
+
+                            <div>
+                                <p className="font-technical text-[9px] uppercase tracking-[0.12em] text-zinc-400">
+                                    02 / SOLUTION
+                                </p>
+
+                                <p className="mt-3 text-sm leading-6 text-zinc-500">
+                                    {project.details.solution}
+                                </p>
+                            </div>
+
+                            <div>
+                                <p className="font-technical text-[9px] uppercase tracking-[0.12em] text-zinc-400">
+                                    03 / HIGHLIGHTS
+                                </p>
+
+                                <div className="mt-4 space-y-3">
+                                    {project.details.highlights.map((highlight) => (
+                                        <div
+                                            key={highlight}
+                                            className="flex items-start gap-3 text-sm text-zinc-500"
+                                        >
+                                            <span className="mt-2 size-1 shrink-0 bg-zinc-400" />
+                                            <span>{highlight}</span>
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                )}
+
                 {/* Project footer */}
                 <section className="border-t border-black/10 px-4 py-8 dark:border-white/10">
                     <div className="flex items-center justify-between">
