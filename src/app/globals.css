@@ -25,6 +25,7 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-geist), system-ui, sans-serif;
+  overflow-x: clip;
 }
 
 .font-technical {
@@ -65,16 +66,10 @@ body {
   }
 }
 
-/* Blueprint sections */
-.blueprint-section {
-  position: relative;
-}
-
-/* Section heading with full-width blueprint lines */
 @media (min-width: 768px) {
   .blueprint-heading {
     position: relative;
-    padding: 10px 0;
+    padding: 18px 0;
   }
 
   .blueprint-heading::before,
@@ -83,24 +78,34 @@ body {
     position: absolute;
     left: -30vw;
     width: 100vw;
-    border-top: 1px dashed rgba(0, 0, 0, 0.1);
+    height: 1px;
     pointer-events: none;
+    background: rgba(255, 255, 255, 0.1);
   }
 
-  /* Top line */
   .blueprint-heading::before {
     top: 0;
   }
 
-  /* Bottom line */
   .blueprint-heading::after {
     bottom: 0;
   }
 
-  /* Dark mode */
+  .blueprint-heading::before {
+    box-shadow:
+      calc(30vw - 1px) 0 0 0 rgba(255, 255, 255, 0.1),
+      calc(70vw - 1px) 0 0 0 rgba(255, 255, 255, 0.1);
+  }
+
+  .blueprint-heading::after {
+    box-shadow:
+      calc(30vw - 1px) 0 0 0 rgba(255, 255, 255, 0.1),
+      calc(70vw - 1px) 0 0 0 rgba(255, 255, 255, 0.1);
+  }
+
   .dark .blueprint-heading::before,
   .dark .blueprint-heading::after {
-    border-color: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.1);
   }
 }
 

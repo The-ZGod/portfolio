@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
+import BlueprintHeading from "@/components/BlueprintHeading";
 
 type Activity = Record<string, number>;
 
@@ -86,15 +87,17 @@ export default function LeetCodeActivity() {
     }, [days]);
 
     const maxActivity = useMemo(() => {
-        return Math.max(1, ...Object.values(activity));
-    }, [activity]);
+        const visibleActivity = days.map((date) => activity[date] ?? 0);
+
+        return Math.max(1, ...visibleActivity);
+    }, [activity, days]);
 
     const totalActivity = useMemo(() => {
-        return Object.values(activity).reduce(
-            (total, count) => total + count,
+        return days.reduce(
+            (total, date) => total + (activity[date] ?? 0),
             0,
         );
-    }, [activity]);
+    }, [activity, days]);
 
     const monthLabels = useMemo(() => {
         const labels: { label: string; index: number }[] = [];
@@ -133,33 +136,27 @@ export default function LeetCodeActivity() {
     }
 
     return (
-        <div className="mt-8 border-t border-black/10 pt-6 dark:border-white/10">
-            <div className="flex items-end justify-between">
-                <div>
-                    {/* <p className="font-technical text-[9px] uppercase tracking-[0.15em] text-zinc-400">
-                        LEETCODE ACTIVITY
-                    </p> */}
-
-                    <div className="blueprint-heading">
-                        <h2 className="text-xl font-semibold tracking-tight">
-                            Leetcode Activity
-                        </h2>
-                    </div>
-
-                    <p className="mt-2 text-xs text-zinc-500">
-                        {totalActivity} submissions in the last year
-                    </p>
-                </div>
+        <div className="mt-8 w-full pt-0">
+            <div className="relative w-full">
+                <BlueprintHeading>
+                    <h2 className="text-xl font-semibold tracking-tight">
+                        Leetcode Activity
+                    </h2>
+                </BlueprintHeading>
 
                 <a
                     href="https://leetcode.com/u/OG_Aru/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="font-technical text-[9px] text-zinc-400 transition-colors hover:text-white"
+                    className="absolute right-0 top-1/2 z-20 -translate-y-1/2 px-4 font-technical text-[9px] text-zinc-400 transition-colors hover:text-white"
                 >
                     OG_Aru ↗
                 </a>
             </div>
+
+            <p className="mt-4 text-xs text-zinc-500">
+                {totalActivity} submissions in the last year
+            </p>
 
             <div className="mt-5 w-full pb-2">
                 <div className="w-full">
@@ -186,7 +183,7 @@ export default function LeetCodeActivity() {
                     </div>
 
                     <div
-                        className="grid grid-rows-7 grid-flow-col gap-[3px]"
+                        className="grid grid-flow-col grid-rows-7 gap-[3px]"
                         style={{
                             gridTemplateColumns: `repeat(${weeks.length}, minmax(0, 1fr))`,
                         }}
@@ -210,7 +207,7 @@ export default function LeetCodeActivity() {
                                         key={date}
                                         title={`${count} submission${count === 1 ? "" : "s"} · ${date}`}
                                         className={[
-                                            "aspect-square w-full min-w-1 rounded-[2px]",
+                                            "aspect-square w-full min-w-0 rounded-[2px]",
                                             level === 0 &&
                                             "bg-zinc-100 dark:bg-zinc-900",
                                             level === 1 &&

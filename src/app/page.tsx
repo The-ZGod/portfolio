@@ -9,6 +9,7 @@ import ThemeToggle from "@/components/ThemeToggle";
 import MobileNavbar from "@/components/MobileNavbar";
 import LeetCodeActivity from "@/components/LeetCodeActivity";
 import CodingProfiles from "@/components/CodingProfiles";
+import BlueprintHeading from "@/components/BlueprintHeading";
 
 export default function Home() {
   return (
@@ -22,43 +23,48 @@ export default function Home() {
         className="pointer-events-none fixed inset-0 z-40 hidden md:block"
       >
         {/* Left vertical guide */}
-        <div className="absolute inset-y-0 left-[30%] border-l border-dashed border-black/10 dark:border-white/10" />
+        <div className="absolute inset-y-0 left-[calc(50%-20vw)] border-l border-dashed border-black/10 dark:border-white/10" />
 
         {/* Right vertical guide */}
-        <div className="absolute inset-y-0 left-[70%] border-l border-dashed border-black/10 dark:border-white/10" />
+        <div className="absolute inset-y-0 left-[calc(50%+20vw)] border-l border-dashed border-black/10 dark:border-white/10" />
       </div>
 
       {/* Main Content */}
       <div className="relative z-40 mx-auto w-full md:w-[40vw]">
+
         {/* Banner */}
-        <section className="blueprint-reveal relative flex h-[22vh] items-end px-4 pb-5">
-          <div>
-            <p className="font-technical text-[10px] font-semibold uppercase tracking-[0.2em] text-zinc-500">
-              Portfolio / 2026
-            </p>
-            <h1 className="mt-2 text-2xl font-bold tracking-[-0.03em]">
-              Arihant Alagoudar
-            </h1>
-          </div>
+        <section className="relative h-[20vh] overflow-hidden border-y border-dashed border-black/10 dark:border-white/10">
+          {/* <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            className="block h-auto w-full object-cover"
+          >
+            <source src="/geto.mp4" type="video/mp4" />
+          </video> */}
+
+          <img
+            src="/crown1.jpg"
+            alt="Arihant Alagoudar"
+          />
         </section>
 
         {/* Profile */}
-        <section className="relative w-full border-y border-dashed border-black/10 dark:border-white/10 md:-ml-[30vw] md:w-screen">
-          <span
+        <section className="relative w-full">
+          <div
             aria-hidden="true"
-            className="absolute left-[30%] top-0 size-2 -translate-x-1/2 -translate-y-1/2 rounded-full border border-black/30 bg-[var(--background)] dark:border-white/30"
+            className="pointer-events-none absolute top-0 left-[-100vw] right-[-100vw] h-0 border-t border-dashed border-black/20 dark:border-white/15"
           />
+
           <span
             aria-hidden="true"
-            className="absolute left-[70%] top-0 size-2 -translate-x-1/2 -translate-y-1/2 rounded-full border border-black/30 bg-[var(--background)] dark:border-white/30"
+            className="pointer-events-none absolute top-0 left-0 z-20 size-[6px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-black/50 bg-[var(--background)] dark:border-white/60"
           />
+
           <span
             aria-hidden="true"
-            className="absolute bottom-0 left-[30%] size-1.5 -translate-x-1/2 translate-y-1/2 bg-black/30 dark:bg-white/30"
-          />
-          <span
-            aria-hidden="true"
-            className="absolute bottom-0 left-[70%] size-1.5 -translate-x-1/2 translate-y-1/2 bg-black/30 dark:bg-white/30"
+            className="pointer-events-none absolute top-0 right-0 z-20 size-[6px] translate-x-1/2 -translate-y-1/2 rounded-full border border-black/50 bg-[var(--background)] dark:border-white/60"
           />
 
           <div className="mx-auto w-full md:w-[40vw]">
@@ -77,9 +83,11 @@ export default function Home() {
                     <h1 className="truncate text-[22px] font-semibold tracking-tight">
                       Arihant Alagoudar
                     </h1>
+
                     <p className="mt-1 text-sm text-zinc-500">
                       Software Engineer · Full-Stack · AI/ML
                     </p>
+
                     <p className="mt-1 font-technical text-[8px] uppercase tracking-[0.12em] text-zinc-400">
                       ISE · RNSIT · Bengaluru
                     </p>
@@ -90,11 +98,27 @@ export default function Home() {
                   <span className="font-technical text-[8px] text-zinc-400">
                     ⌘ K
                   </span>
+
                   <ThemeToggle />
                 </div>
               </div>
             </div>
           </div>
+
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute bottom-0 left-[-100vw] right-[-100vw] h-0 border-b border-dashed border-black/20 dark:border-white/15"
+          />
+
+          <span
+            aria-hidden="true"
+            className="pointer-events-none absolute bottom-0 left-0 z-20 size-[6px] -translate-x-1/2 translate-y-1/2 rounded-full border border-black/50 bg-[var(--background)] dark:border-white/60"
+          />
+
+          <span
+            aria-hidden="true"
+            className="pointer-events-none absolute bottom-0 right-0 z-20 size-[6px] translate-x-1/2 translate-y-1/2 rounded-full border border-black/50 bg-[var(--background)] dark:border-white/60"
+          />
         </section>
 
         {/* Temporary content */}
@@ -189,16 +213,17 @@ export default function Home() {
           id="projects"
           className="blueprint-section px-4 py-4"
         >
-          <div className="blueprint-heading">
-            <div className="flex items-end justify-between">
-              <div>
-                <h2 className="text-xl font-semibold tracking-tight">
-                  Projects
-                </h2>
-              </div>
-            </div>
-          </div>
+          <BlueprintHeading>
+            <h2 className="text-xl font-semibold tracking-tight">
+              Projects
+            </h2>
+          </BlueprintHeading>
+              
 
+
+          {/* <h2 className="text-xl font-semibold tracking-tight">
+            Education
+          </h2> */}
           <ProjectsGrid />
         </section>
 
@@ -206,7 +231,7 @@ export default function Home() {
           id="coding"
           className="blueprint-section blueprint-reveal px-4 py-4"
         >
-          <div className="blueprint-heading">
+          <BlueprintHeading>
             {/* <div className="mt-4 flex items-end justify-between gap-4"> */}
             <h2 className="text-xl font-semibold tracking-tight">
               Competitive programming
@@ -215,7 +240,7 @@ export default function Home() {
               DSA / CP
             </span> */}
             {/* </div> */}
-          </div>
+          </BlueprintHeading>
 
           <p className="mt-4 max-w-xl text-sm leading-7 text-zinc-500">
             Regular problem solving across data structures, algorithms, and
@@ -232,11 +257,12 @@ export default function Home() {
           id="experience"
           className="blueprint-section px-4 py-4"
         >
-          <div className="blueprint-heading">
+          <BlueprintHeading>
             <h2 className="text-xl font-semibold tracking-tight">
               Education
             </h2>
-          </div>
+          </BlueprintHeading>
+          
 
           <ExperienceTimeline />
         </section>
@@ -245,24 +271,25 @@ export default function Home() {
           id="skills"
           className="blueprint-section blueprint-reveal px-4 py-4"
         >
-          <div className="blueprint-heading">
+          <BlueprintHeading>
             <h2 className="text-xl font-semibold tracking-tight">
               Skills &amp; Technologies
             </h2>
-          </div>
+          </BlueprintHeading>
 
           <SkillsGrid />
         </section>
 
+        
         <section
           id="contact"
           className="blueprint-section blueprint-reveal px-4 py-4"
         >
-          <div className="blueprint-heading">
+          <BlueprintHeading>
             <h2 className="text-xl font-semibold tracking-tight">
               Let&apos;s build something.
             </h2>
-          </div>
+          </BlueprintHeading>
 
           <p className="mt-5 max-w-xl text-sm leading-7 text-zinc-500">
             I&apos;m interested in software engineering opportunities,

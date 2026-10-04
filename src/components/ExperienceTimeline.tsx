@@ -6,7 +6,7 @@ export default function ExperienceTimeline() {
             {timeline.map((item, index) => (
                 <article
                     key={`${item.organization}-${index}`}
-                    className="grid grid-cols-[80px_1fr] gap-5 border-t border-black/10 py-8 dark:border-white/10"
+                    className="grid grid-cols-[80px_1fr] gap-5"
                 >
                     {/* Period */}
                     <div>
