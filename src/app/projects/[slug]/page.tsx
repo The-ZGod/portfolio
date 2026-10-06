@@ -1,4 +1,5 @@
 import { projects } from "@/data/projects";
+import ProjectScreenshotCarousel from "@/components/ProjectScreenshotCarousel";
 import Link from "next/link";
 
 type ProjectPageProps = {
@@ -116,27 +117,7 @@ export default async function ProjectPage({
 
                         {/* Video */}
                         <div className="aspect-video">
-                            {project.video ? (
-                                <iframe
-                                    src={project.video}
-                                    title={`${project.title} project demo`}
-                                    className="h-full w-full"
-                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                    allowFullScreen
-                                />
-                            ) : (
-                                <div className="flex h-full items-center justify-center">
-                                    <div className="text-center">
-                                        <p className="font-technical text-[9px] uppercase tracking-[0.15em] text-zinc-400">
-                                            PROJECT DEMO
-                                        </p>
-
-                                        <p className="mt-3 text-sm text-zinc-500">
-                                            Video coming soon
-                                        </p>
-                                    </div>
-                                </div>
-                            )}
+                            <ProjectScreenshotCarousel />
                         </div>
 
                         {/* Bottom technical line */}

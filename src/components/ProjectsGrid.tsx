@@ -32,43 +32,28 @@ const technologyIcons: Record<string, React.ElementType> = {
 
 export default function ProjectsGrid() {
     return (
-        <div className="mt-8 grid grid-cols-1 gap-y-8 gap-x-5 px-5 sm:grid-cols-2">
+        <div className="mt-8 grid grid-cols-1 gap-y-8 gap-x-7 px-2 sm:grid-cols-2">
             {projects.map((project) => (
                 <article key={project.id} className="group min-w-0">
                     {/* Preview */}
-                    <Link
-                        href={`/projects/${project.id}`}
-                        className="relative block aspect-[1.45/1] overflow-hidden rounded-[14px] border border-white/10 bg-zinc-950 p-2 transition-colors duration-300 hover:border-white/20"
-                    >
-                        {project.preview ? (
-                            <iframe
-                                src={project.preview}
-                                title={`${project.title} preview`}
-                                className="pointer-events-none h-full w-full rounded-[9px] scale-[1.01] transition-transform duration-500 group-hover:scale-[1.04]"
-                                loading="lazy"
-                            />
-                        ) : (
-                            <div className="flex h-full items-center justify-center rounded-[9px]">
-                                <div className="text-center">
-                                    <p className="font-technical text-3xl text-zinc-800">
-                                        {project.title.slice(0, 2).toUpperCase()}
-                                    </p>
+                    <div className="group relative aspect-[16/11] overflow-hidden rounded-[10px] border border-white/10 bg-[#08080a]">
+                        <img
+                            src={project.backgroundImage}
+                            alt=""
+                            aria-hidden="true"
+                            className="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-0 transition-opacity duration-500 ease-out group-hover:opacity-100"
+                        />
 
-                                    <p className="mt-2 font-technical text-[8px] uppercase tracking-[0.15em] text-zinc-600">
-                                        PROJECT PREVIEW
-                                    </p>
-                                </div>
+                        <div className="relative z-10 flex h-full items-center justify-center p-3">
+                            <div className="h-full w-full overflow-hidden rounded-[6px] border border-white/10 bg-black transition-all duration-500 ease-out group-hover:scale-[0.92]">
+                                <img
+                                    src={project.previewImage}
+                                    alt={`${project.title} project preview`}
+                                    className="h-full w-full object-cover"
+                                />
                             </div>
-                        )}
-
-                        {/* Preview overlay */}
-                        <div className="pointer-events-none absolute inset-0 bg-black/0 transition-colors duration-300 group-hover:bg-black/10" />
-
-                        {/* Project number */}
-                        <span className="absolute left-3 top-3 font-technical text-[8px] text-zinc-500">
-                            {String(projects.indexOf(project) + 1).padStart(2, "0")}
-                        </span>
-                    </Link>
+                        </div>
+                    </div>
 
                     {/* Project information */}
                     <div className="mt-4">

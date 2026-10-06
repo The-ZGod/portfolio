@@ -15,6 +15,8 @@ export type Project = {
         solution: string;
         highlights: string[];
     };
+    previewImage?: string;
+    backgroundImage?: string;
 };
 
 export const projects: Project[] = [
@@ -41,6 +43,9 @@ export const projects: Project[] = [
                 "Automated backend tests and evaluation benchmarks",
             ],
         },
+
+        previewImage: "/projects/flagforge/01.png",
+        backgroundImage: "/projects/flagforge/bg17.jpg",
     },
 
     {
@@ -56,6 +61,8 @@ export const projects: Project[] = [
             "Prisma",
             "MySQL",
         ],
+        previewImage: "/projects/flagforge/01.png",
+        backgroundImage: "/projects/flagforge/bg16.jpg",
     },
 
     // {

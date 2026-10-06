@@ -122,3 +122,19 @@ body {
     border-color: rgba(255, 255, 255, 0.1);
   }
 }
+
+
+/* carousel */
+@keyframes project-carousel {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-project-carousel {
+  animation: project-carousel 28s linear infinite;
+}
