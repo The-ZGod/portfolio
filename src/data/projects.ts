@@ -58,31 +58,31 @@ export const projects: Project[] = [
         ],
     },
 
-    {
-        id: "event-management",
-        title: "Event Management System",
-        category: "FULL-STACK",
-        description:
-            "A web application for managing events, registrations, and event-related information through a centralized platform.",
-        technologies: [
-            "Java",
-            "Servlets",
-            "JavaScript",
-            "MySQL",
-        ],
-    },
+    // {
+    //     id: "event-management",
+    //     title: "Event Management System",
+    //     category: "FULL-STACK",
+    //     description:
+    //         "A web application for managing events, registrations, and event-related information through a centralized platform.",
+    //     technologies: [
+    //         "Java",
+    //         "Servlets",
+    //         "JavaScript",
+    //         "MySQL",
+    //     ],
+    // },
 
-    {
-        id: "browser-history-manager",
-        title: "Browser History Manager",
-        category: "SYSTEM / WEB",
-        description:
-            "A browser history management application built around a doubly linked list with a web interface for interacting with stored history.",
-        technologies: [
-            "C",
-            "Doubly Linked List",
-            "Flask",
-            "Python",
-        ],
-    },
+    // {
+    //     id: "browser-history-manager",
+    //     title: "Browser History Manager",
+    //     category: "SYSTEM / WEB",
+    //     description:
+    //         "A browser history management application built around a doubly linked list with a web interface for interacting with stored history.",
+    //     technologies: [
+    //         "C",
+    //         "Doubly Linked List",
+    //         "Flask",
+    //         "Python",
+    //     ],
+    // },
 ];

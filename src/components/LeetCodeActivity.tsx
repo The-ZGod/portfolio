@@ -183,7 +183,7 @@ export default function LeetCodeActivity() {
                     </div>
 
                     <div
-                        className="grid grid-flow-col grid-rows-7 gap-[3px]"
+                        className="grid grid-flow-col grid-rows-7 gap-[2px]"
                         style={{
                             gridTemplateColumns: `repeat(${weeks.length}, minmax(0, 1fr))`,
                         }}

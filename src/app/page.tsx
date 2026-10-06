@@ -10,6 +10,11 @@ import MobileNavbar from "@/components/MobileNavbar";
 import LeetCodeActivity from "@/components/LeetCodeActivity";
 import CodingProfiles from "@/components/CodingProfiles";
 import BlueprintHeading from "@/components/BlueprintHeading";
+import MagneticButton from "@/components/MagneticButton";
+import { LuLinkedin, LuMail } from "react-icons/lu";
+import { FiGithub, FiCommand } from "react-icons/fi";
+import { FaRegAddressBook } from "react-icons/fa6";
+import { IoIosSquare } from "react-icons/io";
 
 export default function Home() {
   return (
@@ -95,8 +100,8 @@ export default function Home() {
                 </div>
 
                 <div className="flex shrink-0 items-center gap-2">
-                  <span className="font-technical text-[8px] text-zinc-400">
-                    ⌘ K
+                  <span className="flex gap-2 font-technical text-[10px] text-zinc-400">
+                    <FiCommand className="text-[12px] "/> <p>k</p>
                   </span>
 
                   <ThemeToggle />
@@ -136,20 +141,20 @@ export default function Home() {
 
             <ul className="mt-5 space-y-2 text-[14px] leading-4 text-zinc-300 dark:text-zinc-300">
               <li className="flex gap-2">
-                <span>•</span>
+                <span><IoIosSquare /></span>
                 <span>
                   Software engineering, AI/ML, and developer tools excite me.
                 </span>
               </li>
               <li className="flex gap-2">
-                <span>•</span>
+                <span><IoIosSquare /></span>
                 <span>
                   I enjoy turning ideas into practical products and solving real
                   problems.
                 </span>
               </li>
               <li className="flex gap-2">
-                <span>•</span>
+                <span><IoIosSquare /></span>
                 <span>
                   Currently building projects with React, Next.js, Node.js, and
                   TypeScript.
@@ -157,21 +162,45 @@ export default function Home() {
               </li>
             </ul>
 
-            <div className="mt-6 flex flex-wrap gap-2">
+            <div className="mt-7 flex flex-wrap gap-2">
               <a
                 href="/resume.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="border border-black/10 bg-zinc-100 px-3 py-2 text-xs text-zinc-700 transition-colors hover:bg-zinc-200 dark:border-white/10 dark:bg-zinc-900 dark:text-zinc-300 dark:hover:bg-zinc-800"
+                className="group relative inline-flex h-10 items-center gap-2 overflow-hidden rounded-[6px] bg-zinc-100 px-3.5 text-[13px] font-medium text-black shadow-[0_0_0_1px_rgba(255,255,255,0.2)] transition-all duration-300 ease-out hover:-translate-y-1 hover:bg-zinc-100 hover:shadow-[0_8px_25px_rgba(255,255,255,0.12)] active:translate-y-0"
               >
-                View Resume ↗
+                <span className="absolute inset-y-0 -left-[120%] w-1/2 -skew-x-12 bg-gradient-to-r from-transparent via-black/10 to-transparent transition-transform duration-700 group-hover:translate-x-[420%]" />
+
+                <span className="relative z-10 text-[14px] transition-transform duration-300 group-hover:scale-110">
+                  <FaRegAddressBook />
+                </span>
+
+                <span className="relative z-10 text-[14px]">
+                  View Resume
+                </span>
+
+                <span className="relative z-10 ml-1 text-zinc-500 transition-all duration-300 group-hover:translate-x-1 group-hover:-translate-y-1 group-hover:text-black">
+                  ↗
+                </span>
               </a>
 
               <a
                 href="mailto:arihant.og@gmail.com"
-                className="border border-black/10 px-3 py-2 text-xs text-zinc-500 transition-colors hover:text-zinc-900 dark:border-white/10 dark:hover:text-white"
+                className="group relative inline-flex h-10 items-center gap-2 overflow-hidden rounded-[6px] border border-white/10 bg-white/[0.04] px-3.5 text-[13px] font-medium text-zinc-300 transition-all duration-300 ease-out hover:-translate-y-1 hover:border-white/25 hover:bg-white/[0.08] hover:text-white hover:shadow-[0_8px_25px_rgba(255,255,255,0.05)] active:translate-y-0"
               >
-                Send an email ↗
+                <span className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/[0.04] to-transparent transition-transform duration-700 group-hover:translate-x-full" />
+
+                <span className="relative z-10 text-[15px] text-zinc-400 transition-transform duration-300 group-hover:-rotate-6 group-hover:scale-110 group-hover:text-zinc-200">
+                  <LuMail />
+                </span>
+
+                <span className="relative z-10">
+                  email
+                </span>
+
+                {/* <span className="relative z-10 ml-1 text-zinc-500 transition-all duration-300 group-hover:translate-x-1 group-hover:-translate-y-1 group-hover:text-white">
+                  ↗
+                </span> */}
               </a>
             </div>
 
@@ -180,32 +209,51 @@ export default function Home() {
               <span className="text-zinc-300 dark:text-zinc-300">socials</span>
             </p>
 
-            <div className="mt-3 flex flex-wrap gap-2">
+            <div className="mt-4 flex flex-wrap gap-2">
               <a
                 href="https://github.com/The-ZGod"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="border border-black/10 px-3 py-2 font-technical text-[9px] text-zinc-500 transition-colors hover:text-zinc-900 dark:border-white/10 dark:hover:text-white"
+                className="group inline-flex h-9 items-center gap-2 rounded-[6px] border border-white/10 bg-white/[0.04] px-3 text-[12px] font-medium text-zinc-400 transition-all duration-300 ease-out hover:-translate-y-1 hover:border-white/25 hover:bg-white/[0.08] hover:text-white hover:shadow-[0_6px_20px_rgba(255,255,255,0.04)] active:translate-y-0"
               >
-                GitHub ↗
+                <span className="transition-transform duration-300 group-hover:rotate-[-8deg] group-hover:scale-110">
+                  <FiGithub />
+                </span>
+                <span>GitHub</span>
+                {/* <span className="opacity-0 transition-all duration-300 group-hover:translate-x-0.5 group-hover:opacity-100">
+                  ↗
+                </span> */}
               </a>
 
               <a
                 href="https://www.linkedin.com/in/zgod/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="border border-black/10 px-3 py-2 font-technical text-[9px] text-zinc-500 transition-colors hover:text-zinc-900 dark:border-white/10 dark:hover:text-white"
+                className="group inline-flex h-9 items-center gap-2 rounded-[6px] border border-white/10 bg-white/[0.04] px-3 text-[12px] font-medium text-zinc-400 transition-all duration-300 ease-out hover:-translate-y-1 hover:border-white/25 hover:bg-white/[0.08] hover:text-white hover:shadow-[0_6px_20px_rgba(255,255,255,0.04)] active:translate-y-0"
               >
-                LinkedIn ↗
+                <span className="font-semibold transition-transform duration-300 group-hover:scale-110">
+                  <LuLinkedin className="text-[15px] " />
+                </span>
+                <span>LinkedIn</span>
+                {/* <span className="opacity-0 transition-all duration-300 group-hover:translate-x-0.5 group-hover:opacity-100">
+                  ↗
+                </span> */}
               </a>
 
-              <a
+              {/* <a
                 href="mailto:arihant.og@gmail.com"
-                className="border border-black/10 px-3 py-2 font-technical text-[9px] text-zinc-500 transition-colors hover:text-zinc-900 dark:border-white/10 dark:hover:text-white"
+                className="group inline-flex h-9 items-center gap-2 rounded-[6px] border border-white/10 bg-white/[0.04] px-3.5 text-[12px] font-medium text-zinc-400 transition-all duration-300 ease-out hover:-translate-y-1 hover:border-white/25 hover:bg-white/[0.08] hover:text-white hover:shadow-[0_6px_20px_rgba(255,255,255,0.04)] active:translate-y-0"
               >
-                Email ↗
-              </a>
+                <span className="transition-transform duration-300 group-hover:-rotate-6 group-hover:scale-110">
+                  ✉
+                </span>
+                <span>Email</span>
+                <span className="opacity-0 transition-all duration-300 group-hover:translate-x-0.5 group-hover:opacity-100">
+                  ↗
+                </span>
+              </a> */}
             </div>
+            
           </div>
         </section>
 

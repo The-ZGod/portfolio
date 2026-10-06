@@ -1,25 +1,20 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { BsBrightnessHighFill } from "react-icons/bs";
+import { MdBrightness2 } from "react-icons/md";
 import { useTheme } from "next-themes";
 
 export default function ThemeToggle() {
-    const { theme, setTheme } = useTheme();
     const [mounted, setMounted] = useState(false);
+    const { theme, setTheme } = useTheme();
 
     useEffect(() => {
         setMounted(true);
     }, []);
 
     if (!mounted) {
-        return (
-            <button
-                type="button"
-                className="rounded-[5px] border border-black/10 px-2.5 py-1.5 font-technical text-[10px] dark:border-white/10"
-            >
-                THEME
-            </button>
-        );
+        return <div className="size-8" />;
     }
 
     const isDark = theme === "dark";
@@ -28,10 +23,14 @@ export default function ThemeToggle() {
         <button
             type="button"
             onClick={() => setTheme(isDark ? "light" : "dark")}
-            className="rounded-[5px] border border-black/10 px-2.5 py-1.5 font-technical text-[10px] transition-colors hover:bg-zinc-100 dark:border-white/10 dark:hover:bg-zinc-900"
-            aria-label="Toggle theme"
+            aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}
+            className="flex size-8 items-center justify-center rounded-[6px] text-zinc-400 transition-colors duration-200 hover:bg-white/[0.06] hover:text-zinc-100"
         >
-            {isDark ? "LIGHT" : "DARK"}
+            {isDark ? (
+                <BsBrightnessHighFill className="size-[15px]" />
+            ) : (
+                    <MdBrightness2 className="size-[15px]" />
+            )}
         </button>
     );
 }
