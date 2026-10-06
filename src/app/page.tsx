@@ -53,6 +53,13 @@ export default function Home() {
             src="/crown1.jpg"
             alt="Arihant Alagoudar"
           />
+
+          <div className="absolute bottom-2 right-3 max-w-[280px] text-right">
+            <p className="font-technical text-[10px] leading-relaxed tracking-[0.08em] text-white/70">
+              -Gods Plan!
+            </p>
+          </div>
+
         </section>
 
         {/* Profile */}
