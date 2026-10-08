@@ -56,7 +56,7 @@ export default function Home() {
 
           <div className="absolute bottom-2 right-3 max-w-[280px] text-right">
             <p className="font-technical text-[10px] leading-relaxed tracking-[0.08em] text-white/70">
-              -Gods Plan!
+              - All Glory to God
             </p>
           </div>
 
