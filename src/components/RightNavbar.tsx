@@ -51,8 +51,16 @@ export default function RightNavbar() {
     };
 
     return (
-        <nav className="fixed right-[calc(15%-32px)] top-1/2 z-50 hidden -translate-y-1/2 lg:block">
+        <nav className="fixed left-[calc(50%+20vw+32px)] top-1/2 z-50 hidden -translate-y-1/2 lg:block">
             <div className="flex flex-col gap-4">
+
+                <div className="mb-1 flex items-center gap-3">
+                    <span className="font-technical text-[10px] font-semibold uppercase tracking-[0.18em] text-zinc-500">
+                        Index
+                    </span>
+                    <span className="h-px w-6 bg-white/20" />
+                </div>
+
                 {sections.map((section, index) => {
                     const isActive = activeSection === section.id;
 

@@ -10,6 +10,7 @@ import MobileNavbar from "@/components/MobileNavbar";
 import LeetCodeActivity from "@/components/LeetCodeActivity";
 import CodingProfiles from "@/components/CodingProfiles";
 import BlueprintHeading from "@/components/BlueprintHeading";
+import QuoteSection from "@/components/QuoteSection";
 import MagneticButton from "@/components/MagneticButton";
 import { LuLinkedin, LuMail } from "react-icons/lu";
 import { FiGithub, FiCommand } from "react-icons/fi";
@@ -335,99 +336,60 @@ export default function Home() {
           <SkillsGrid />
         </section>
 
-        
+
         <section
-          id="contact"
+          // id="skills"
           className="blueprint-section blueprint-reveal px-4 py-4"
         >
-          <BlueprintHeading>
+          {/* <BlueprintHeading>
             <h2 className="text-xl font-semibold tracking-tight">
-              Let&apos;s build something.
+              Skills &amp; Technologies
             </h2>
-          </BlueprintHeading>
+          </BlueprintHeading> */}
 
-          <p className="mt-5 max-w-xl text-sm leading-7 text-zinc-500">
-            I&apos;m interested in software engineering opportunities,
-            interesting technical problems, and projects where I can build and
-            learn.
-          </p>
+          {/* <SkillsGrid /> */}
+          <div className="relative py-2">
 
-          {/* Contact panel */}
-          <div className="mt-10 border border-black/10 dark:border-white/10">
-            {/* Header */}
-            <div className="flex items-center justify-between border-b border-black/10 px-4 py-3 dark:border-white/10">
-              <span className="font-technical text-[9px] uppercase tracking-[0.15em] text-zinc-400">
-                Contact / Arihant
-              </span>
+            <div
+              aria-hidden="true"
+              className="pointer-events-none absolute bottom-0 left-[-100vw] right-[-100vw] h-0 border-b border-dashed border-black/20 dark:border-white/15"
+            />
 
-              <span className="flex items-center gap-2 font-technical text-[9px] text-zinc-400">
-                <span className="size-1.5 rounded-full bg-emerald-500" />
-                AVAILABLE
-              </span>
-            </div>
+            <span
+              aria-hidden="true"
+              className="pointer-events-none absolute bottom-0 left-[-16px] z-20 size-[3px] -translate-x-1/2 translate-y-1/2 rounded-full border border-black/50 bg-[var(--background)] dark:border-white/60"
+            />
 
-            {/* Contact links */}
-            <div className="divide-y divide-black/10 dark:divide-white/10">
-              <a
-                href="mailto:arihant.og@gmail.com"
-                className="group flex items-center justify-between px-4 py-5 transition-colors hover:bg-zinc-50 dark:hover:bg-zinc-950"
-              >
-                <div>
-                  <p className="font-technical text-[9px] uppercase tracking-[0.15em] text-zinc-400">
-                    EMAIL
-                  </p>
-                  <p className="mt-2 text-sm font-medium">
-                    arihant.og@gmail.com
-                  </p>
-                </div>
-
-                <span className="text-zinc-400 transition-transform group-hover:translate-x-1">
-                  ↗
-                </span>
-              </a>
-
-              <a
-                href="https://github.com/The-ZGod"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group flex items-center justify-between px-4 py-5 transition-colors hover:bg-zinc-50 dark:hover:bg-zinc-950"
-              >
-                <div>
-                  <p className="font-technical text-[9px] uppercase tracking-[0.15em] text-zinc-400">
-                    GITHUB
-                  </p>
-                  <p className="mt-2 text-sm font-medium">
-                    github.com/The-ZGod
-                  </p>
-                </div>
-
-                <span className="text-zinc-400 transition-transform group-hover:translate-x-1">
-                  ↗
-                </span>
-              </a>
-
-              <a
-                href="https://www.linkedin.com/in/zgod/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group flex items-center justify-between px-4 py-5 transition-colors hover:bg-zinc-50 dark:hover:bg-zinc-950"
-              >
-                <div>
-                  <p className="font-technical text-[9px] uppercase tracking-[0.15em] text-zinc-400">
-                    LINKEDIN
-                  </p>
-                  <p className="mt-2 text-sm font-medium">
-                    LinkedIn profile
-                  </p>
-                </div>
-
-                <span className="text-zinc-400 transition-transform group-hover:translate-x-1">
-                  ↗
-                </span>
-              </a>
-            </div>
+            <span
+              aria-hidden="true"
+              className="pointer-events-none absolute bottom-0 right-[-16px] z-20 size-[3px] translate-x-1/2 translate-y-1/2 rounded-full border border-black/50 bg-[var(--background)] dark:border-white/60"
+            />
           </div>
+
+          <QuoteSection />
+
+
+          <div className="relative py-2">
+
+            <div
+              aria-hidden="true"
+              className="pointer-events-none absolute bottom-0 left-[-100vw] right-[-100vw] h-0 border-b border-dashed border-black/20 dark:border-white/15"
+            />
+
+            <span
+              aria-hidden="true"
+              className="pointer-events-none absolute bottom-0 left-[-16px] z-20 size-[3px] -translate-x-1/2 translate-y-1/2 rounded-full border border-black/50 bg-[var(--background)] dark:border-white/60"
+            />
+
+            <span
+              aria-hidden="true"
+              className="pointer-events-none absolute bottom-0 right-[-16px] z-20 size-[3px] translate-x-1/2 translate-y-1/2 rounded-full border border-black/50 bg-[var(--background)] dark:border-white/60"
+            />
+          </div>
+          
         </section>
+
+
 
         <Footer />
       </div>
