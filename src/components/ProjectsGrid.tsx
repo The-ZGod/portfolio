@@ -1,5 +1,8 @@
 import Link from "next/link";
 import { projects } from "@/data/projects";
+import { LuArrowUpRight, LuExternalLink } from "react-icons/lu";
+import { LineHoverLink } from "@/components/ui/line-hover-link"
+
 
 import {
     SiNextdotjs,
@@ -44,12 +47,12 @@ export default function ProjectsGrid() {
                             className="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-0 transition-opacity duration-500 ease-out group-hover:opacity-100"
                         />
 
-                        <div className="relative z-10 flex h-full items-center justify-center p-3">
+                        <div className="h-full w-full overflow-hidden rounded-[6px] border border-white/10 bg-[#08080a]">
                             <div className="h-full w-full overflow-hidden rounded-[6px] border border-white/10 bg-black transition-all duration-500 ease-out group-hover:scale-[0.92]">
                                 <img
                                     src={project.previewImage}
                                     alt={`${project.title} project preview`}
-                                    className="h-full w-full object-cover"
+                                    className="h-full w-full object-contain"
                                 />
                             </div>
                         </div>
@@ -62,28 +65,42 @@ export default function ProjectsGrid() {
                                 {project.title}
                             </h3>
 
+
                             {project.status && (
-                                <span className="flex shrink-0 items-center gap-1.5 rounded-full border border-white/10 px-2.5 py-1 font-technical text-[8px] uppercase tracking-[0.08em] text-zinc-400">
+                                <span
+                                    className={`inline-flex shrink-0 items-center gap-2 rounded-full border px-2.5 py-1 ${project.status === "LIVE"
+                                            ? "border-emerald-500/20 bg-emerald-500/[0.06]"
+                                            : project.status === "IN DEVELOPMENT"
+                                                ? "border-amber-400/20 bg-amber-400/[0.05]"
+                                                : "border-white/[0.10] bg-white/[0.03]"
+                                        }`}
+                                >
                                     <span
-                                        className={`size-1.5 rounded-full ${project.status === "LIVE"
-                                                ? "bg-emerald-500"
+                                        className={`size-1.5 shrink-0 rounded-full ${project.status === "LIVE"
+                                                ? "bg-emerald-400"
                                                 : project.status === "IN DEVELOPMENT"
-                                                    ? "bg-amber-500"
+                                                    ? "bg-amber-400"
                                                     : "bg-zinc-500"
                                             }`}
                                     />
 
-                                    {project.status}
+                                    <span className="font-technical text-[9px] font-medium uppercase tracking-[0.12em] text-zinc-300">
+                                        {project.status}
+                                    </span>
                                 </span>
                             )}
+
                         </div>
 
                         <p className="mt-2 max-w-md text-[14px] leading-6 text-zinc-400">
                             {project.description}
                         </p>
 
-                        <div className="mt-4 flex items-center justify-between gap-4">
-                            <div className="mt-4 flex items-center gap-3">
+                        
+
+                        <div className="mt-5 flex flex-wrap items-center gap-4">
+                            {/* Technology icons */}
+                            <div className="flex min-w-0 items-center gap-1.5">
                                 {project.technologies.map((technology) => {
                                     const Icon = technologyIcons[technology];
 
@@ -93,7 +110,7 @@ export default function ProjectsGrid() {
                                         <span
                                             key={technology}
                                             title={technology}
-                                            className="text-zinc-500 transition-colors hover:text-zinc-900 dark:text-zinc-500 dark:hover:text-zinc-200"
+                                            className="text-zinc-500 transition-colors hover:text-zinc-200"
                                         >
                                             <Icon size={16} />
                                         </span>
@@ -101,13 +118,41 @@ export default function ProjectsGrid() {
                                 })}
                             </div>
 
-                            <Link
-                                href={`/projects/${project.id}`}
-                                className="shrink-0 text-[11px] text-zinc-400 transition-colors hover:text-white"
-                            >
-                                View Project ↗
-                            </Link>
+                            {/* Actions */}
+                            <div className="flex shrink-0 items-center gap-3">
+                                {/* <Link
+                                    href={`/projects/${project.id}`}
+                                    className="group/project inline-flex items-center gap-1 text-[11px] text-zinc-400 transition-colors hover:text-white"
+                                >
+                                    View Project
+                                    <LuArrowUpRight className="size-3 transition-transform duration-200 group-hover/project:-translate-y-0.5 group-hover/project:translate-x-0.5" />
+                                </Link> */}
+
+                                <LineHoverLink
+                                    href={`/projects/${project.id}`}
+                                    variant="swap"
+                                    className = "group/project inline-flex items-center gap-1 text-[11px] text-zinc-400 transition-colors hover:text-white"
+                                >
+                                    view Project
+                                    <LuArrowUpRight className="size-3 transition-transform duration-200 group-hover/project:-translate-y-0.5 group-hover/project:translate-x-0.5" />
+                                </LineHoverLink>
+
+                                {project.live && (
+                                    <a
+                                        href={project.live}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        aria-label={`Open live ${project.title} demo`}
+                                        title="Live demo"
+                                        className="group/live inline-flex size-8 items-center justify-center rounded-[6px] border border-emerald-400/25 bg-emerald-400/[0.05] text-emerald-400 transition-all duration-200 hover:border-emerald-400/50 hover:bg-emerald-400/10 hover:text-emerald-300"
+                                    >
+                                        <LuExternalLink className="size-4 transition-transform duration-200 group-hover/live:-translate-y-0.5 group-hover/live:translate-x-0.5" />
+                                    </a>
+                                )}
+                            </div>
                         </div>
+
+
                     </div>
                 </article>
             ))}

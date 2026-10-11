@@ -29,7 +29,8 @@ export const projects: Project[] = [
         technologies: ["Next.js", "TypeScript", "Node.js", "PostgreSQL", "Prisma"],
         github: "https://github.com/The-ZGod/FlagForge",
         video: "",
-        status: "IN DEVELOPMENT",
+        status: "LIVE",
+        live: "https://flag-forge-steel.vercel.app/",
         details: {
             problem:
                 "Teams need a safe way to release features gradually without redeploying their applications.",
@@ -44,26 +45,59 @@ export const projects: Project[] = [
             ],
         },
 
-        previewImage: "/projects/flagforge/01.png",
+        previewImage: "/projects/flagforge/flag.jpg",
         backgroundImage: "/projects/flagforge/bg17.jpg",
     },
 
     {
-        id: "job-application-tracker",
-        title: "Job Application Tracker",
-        category: "FULL-STACK",
+        id: "collaborative-code-editor",
+        title: "Real-Time Collaborative Code Editor",
+        category: "DEVELOPER PLATFORM",
         description:
-            "A full-stack application for organizing job applications, tracking application progress, and managing recruitment workflows.",
+            "A real-time collaborative code editor that enables multiple users to edit code simultaneously with synchronized changes and conflict-free collaboration.",
         technologies: [
             "React",
             "Node.js",
-            "Express",
-            "Prisma",
-            "MySQL",
+            "Socket.IO",
+            "WebSockets",
+            "Yjs",
         ],
-        previewImage: "/projects/flagforge/01.png",
+        github: "https://github.com/The-ZGod/Real-time-Collaborative-code-editor",
+        video: "",
+        status: "IN DEVELOPMENT",
+        details: {
+            problem:
+                "Developers collaborating remotely need a shared coding environment where multiple users can edit the same code simultaneously without overwriting each other's changes.",
+            solution:
+                "The platform combines real-time communication with Yjs-based conflict-free synchronization to keep collaborative editing consistent across connected users.",
+            highlights: [
+                "Real-time multi-user code editing",
+                "Conflict-free synchronization using Yjs",
+                "WebSocket communication with Socket.IO",
+                "Shared editor state across connected clients",
+                "Collaborative coding environment for remote teams",
+            ],
+        },
+        previewImage: "/code-editor.png",
         backgroundImage: "/projects/flagforge/bg16.jpg",
     },
+
+    // {
+    //     id: "job-application-tracker",
+    //     title: "Job Application Tracker",
+    //     category: "FULL-STACK",
+    //     description:
+    //         "A full-stack application for organizing job applications, tracking application progress, and managing recruitment workflows.",
+    //     technologies: [
+    //         "React",
+    //         "Node.js",
+    //         "Express",
+    //         "Prisma",
+    //         "MySQL",
+    //     ],
+    //     previewImage: "/projects/flagforge/01.png",
+    //     backgroundImage: "/projects/flagforge/bg16.jpg",
+    // },
 
     // {
     //     id: "event-management",
