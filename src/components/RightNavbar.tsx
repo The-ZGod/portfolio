@@ -5,10 +5,9 @@ import { useEffect, useState } from "react";
 const sections = [
     { id: "about", label: "ABOUT" },
     { id: "projects", label: "PROJECTS" },
-    { id: "experience", label: "BACKGROUND" },
-    { id: "skills", label: "SKILLS" },
-    { id: "coding", label: "CODING" },
-    { id: "contact", label: "CONTACT" },
+    { id: "coding", label: "COMPETITIVE PROGRAMMING" },
+    { id: "experience", label: "EDUCATION" },
+    { id: "skills", label: "SKILLS AND TECH" },
 ];
 
 export default function RightNavbar() {
